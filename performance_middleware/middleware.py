@@ -47,7 +47,7 @@ class PerformanceMiddleware(object):
 
         start = self._process_data['start_time']
         td = (now - start)
-        seconds_taken = (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 10**6
+        seconds_taken = (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 10.0**6
 
         warning_threshold = getattr(settings, "PERFORMANCE_MIDDLEWARE_WARNING_THRESHOLD", 1.0)
         error_threshold = getattr(settings, "PERFORMANCE_MIDDLEWARE_ERROR_THRESHOLD", 2.0)
